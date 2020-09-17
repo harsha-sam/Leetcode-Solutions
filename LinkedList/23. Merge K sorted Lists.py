@@ -17,7 +17,7 @@ class ListNode:
 # O(n) Creating a new linked list costs O(n) space.
 # O(k) the priority queue (often implemented with heaps) costs O(k) space (it's far less than N in most situations).
 
-from Queue import PriorityQueue
+from queue import PriorityQueue
 
 class Solution(object):
     def mergeKLists(self, lists):
