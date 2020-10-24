@@ -10,6 +10,8 @@
 
 # Time Complexity: O(N)
 # Space Complexity: O(h)
+import math
+
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         return self.explore(root, -math.inf, math.inf) 
