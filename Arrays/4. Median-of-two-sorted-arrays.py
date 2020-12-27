@@ -1,7 +1,7 @@
 # HARD
 # https://leetcode.com/problems/median-of-two-sorted-arrays/
 
-# Time Complexity: O(log( m + n))
+# Time Complexity: O((m + n) / 2)
 
 # As arr1 and arr2 are sorted, we can use merge sort's merge function approach over here
 # We can only sort the array upto half because we are finding median
