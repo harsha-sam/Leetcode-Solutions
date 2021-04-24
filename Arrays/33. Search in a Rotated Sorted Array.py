@@ -1,6 +1,6 @@
 # Medium
 # https://leetcode.com/problems/search-in-rotated-sorted-array/
-# Time Complexity: O( log N)
+# Time Complexity: O(log N)
 # Space Complexity: O(1)
 class Solution:
     def search(self, nums: List[int], target: int) -> int:

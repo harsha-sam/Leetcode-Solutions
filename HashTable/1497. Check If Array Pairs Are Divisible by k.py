@@ -1,7 +1,7 @@
 # Medium
 # https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/
 # TC: O(N)
-# SC: O(1)
+# SC: O(N)
 class Solution:
     def canArrange(self, arr: List[int], k: int) -> bool:
         d = {}

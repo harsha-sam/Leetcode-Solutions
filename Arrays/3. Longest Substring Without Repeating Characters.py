@@ -1,7 +1,7 @@
 # Medium
 # https://leetcode.com/problems/longest-substring-without-repeating-characters/
 # Time Complexity: O(n)
-# Space Complexity: O(1)
+# Space Complexity: O(n)
 
 # Approach: Sliding Window
 # References : 
