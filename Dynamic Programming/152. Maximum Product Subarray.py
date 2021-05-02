@@ -1,5 +1,6 @@
 # Medium
 # https://leetcode.com/problems/maximum-product-subarray/
+# Modified Kadane's algorithm
 # TC: O(N)
 # SC: O(1)
 class Solution:
@@ -12,4 +13,3 @@ class Solution:
             print(maxi, mini)
             out = max(out, maxi)
         return out
-    
