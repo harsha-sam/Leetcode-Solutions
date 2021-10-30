@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
+# https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 # Time Complexity: O(N) 
 # Space Complexity: O(1)

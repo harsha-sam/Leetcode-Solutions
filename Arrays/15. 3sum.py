@@ -1,6 +1,6 @@
 # Medium
 # https://leetcode.com/problems/3sum/
-# Time Complexity: O(N LOG N)
+# Time Complexity: O(N^2)
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
