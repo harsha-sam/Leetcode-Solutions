@@ -13,15 +13,8 @@ class Solution:
         if len(s) != len(t):
             return False
         d = {}
-        for letter in s: # Storing frequencies of letters in s
-            d[letter] = d.get(letter, 0) + 1
-        
-        for letter in t: # reducing the frequencies of the letter
-            if letter not in d:
-                return False
-            d[letter] -= 1 
-        
-        for key, value in d.items():
-            if value != 0:
-                return False
-        return True
+        for i in range(len(s)):
+            d[s[i]] = d.get(s[i], 0) + 1
+            d[t[i]] = d.get(t[i], 0) - 1
+
+        return all(v == 0 for v in d.values())

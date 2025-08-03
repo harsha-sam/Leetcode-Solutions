@@ -7,14 +7,10 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        for char in s:
-            if char in '[({':
-                stack.append(char)
-            elif char in '])}':
-                if not stack:
-                    return False
-                if not stack.pop() + char in ['{}', '()', '[]']:
-                    return False
-        if not stack:
-            return True
-                        
+        m = {')': '(', ']': '[', '}': '{'}
+        for ch in s:
+            if ch in m.values():
+                stack.append(ch)
+            elif not stack or stack.pop() != m.get(ch):
+                return False
+        return not stack

@@ -5,12 +5,9 @@
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        import math
-        mini = math.inf
-        max_profit = 0
-        for i in range(len(prices)):
-            if prices[i] < mini:
-                mini = prices[i]
-            elif prices[i] - mini > max_profit:
-                max_profit = prices[i] - mini
-        return max_profit
+        ans = 0
+        mini = prices[0]
+        for price in prices[1:]:
+            mini = min(mini, price)
+            ans = max(ans, price - mini)
+        return ans
