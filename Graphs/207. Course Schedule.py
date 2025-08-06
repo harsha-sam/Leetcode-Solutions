@@ -3,31 +3,36 @@
 
 # Time Complexity: O(V + E)
 # Space Complexity: O(V)
+from collections import defaultdict
+
+
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        def dfs(adj, used, explored, x):
-            explored[x] = True
-            used[x] = True
-            for w in adj[x]:
-                if used[w]:
-                    return "cycle"
-                else:
-                    if dfs(adj, used, explored, w):
-                        return "cycle"
-                    used[w] = False
-            used[x] = False                  
+        adj = defaultdict(list)
 
-        
-        def acyclic(adj):
-            explored = [False for _ in range(numCourses)] 
-            visited = [False for _ in range(numCourses)]
-            for i in range(len(explored)):
-                if not explored[i]:
-                    if dfs(adj, visited, explored, i) == 'cycle':
-                        return False
-            return True
-        
-        adj = [[] for _ in range(numCourses)]
         for a, b in prerequisites:
             adj[a].append(b)
-        return acyclic(adj)
+
+        state = [0] * numCourses
+
+        def dfs(node):
+            if state[node] == 1: # visiting
+                return False
+            elif state[node] == 2:  # visited
+                return True
+
+            state[node] = 1 # mark the current node as visiting
+
+            for neighbor in adj[node]:
+                if not dfs(neighbor):
+                    return False
+
+            state[node] = 2
+            return True
+
+        for i in range(numCourses):
+            if state[i] == 0:
+                if not dfs(i):
+                    return False
+
+        return True
